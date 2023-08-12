@@ -18,20 +18,32 @@ from pathlib import Path
 # file_name_stub = 'aim_july2021_expert_' 
 # file_name_stub = 'dm_inferno_expert_' 
 # file_name_stub = 'dm_nuke_expert_' 
+<<<<<<< HEAD
 file_name_stub = 'dm_mirage_expert_' 
+=======
+file_name_stub = 'dm_test_expert_' 
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 # folder_name = 'G:/2021/csgo_bot_train_july2021/'
 # folder_name = '/Volumes/My Passport/2021/csgo_bot_train_july2021/'
 # folder_name = '/Volumes/My Passport/2021/csgo_bot_train_july2021/03_dm_expert/'
 # folder_name = '/Volumes/My Passport/2021/csgo_bot_train_july2021/04_aim_expert/'
+<<<<<<< HEAD
 folder_name = '/Volumes/My Passport/2021/csgo_bot_train_july2021/06_othermaps/'
+=======
+folder_name = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/'
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 # folder_name = '/Volumes/My Passport/2021/csgo_bot_train_july2021/05_trackings/'
 # highest_num = get_highest_num(file_name_stub, folder_name)
 
 # for file_chunk in range(0,40):
 for file_chunk in range(0,1):
     save_dict={}
+<<<<<<< HEAD
     n_filer_per_chunk=100
+=======
+    n_filer_per_chunk=2
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
     for file_num in range(file_chunk*n_filer_per_chunk+1,(file_chunk+1)*n_filer_per_chunk+1):
         print('file_num',file_num,end='\r')
         file_name = folder_name+file_name_stub + str(file_num) + '.npy'

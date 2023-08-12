@@ -123,4 +123,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         return
 
 server = MyServer(('localhost', 3000), 'MYTOKENHERE', MyRequestHandler)
+<<<<<<< HEAD
 
+=======
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)

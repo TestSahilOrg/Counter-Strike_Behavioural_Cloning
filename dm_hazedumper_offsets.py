@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 timestamp = 1637660992
+=======
+timestamp = 1686124261
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 #signatures
 
@@ -7,8 +11,13 @@ clientstate_choked_commands = 19760
 clientstate_delta_ticks = 372
 clientstate_last_outgoing_command = 19756
 clientstate_net_channel = 156
+<<<<<<< HEAD
 convar_name_hash_table = 192760
 dwClientState = 5808076
+=======
+convar_name_hash_table = 197024
+dwClientState = 5894556
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 dwClientState_GetLocalPlayer = 384
 dwClientState_IsHLTV = 19784
 dwClientState_Map = 652
@@ -17,6 +26,7 @@ dwClientState_MaxPlayer = 904
 dwClientState_PlayerInfo = 21184
 dwClientState_State = 264
 dwClientState_ViewAngles = 19856
+<<<<<<< HEAD
 dwEntityList = 81532812
 dwForceAttack = 52370708
 dwForceAttack2 = 52370720
@@ -59,6 +69,51 @@ m_yawClassPtr = 14339096
 model_ambient_min = 5820484
 set_abs_angles = 1982320
 set_abs_origin = 1981872
+=======
+dwEntityList = 81788796
+dwForceAttack = 52616680
+dwForceAttack2 = 52616692
+dwForceBackward = 52616752
+dwForceForward = 52616740
+dwForceJump = 86752472
+dwForceLeft = 52616608
+dwForceRight = 52616620
+dwGameDir = 6532480
+dwGameRulesProxy = 87225572
+dwGetAllClasses = 14729108
+dwGlobalVars = 5893728
+dwGlowObjectManager = 87403016
+dwInput = 86365520
+dwInterfaceLinkList = 10073252
+dwLocalPlayer = 14592396
+dwMouseEnable = 86217136
+dwMouseEnablePtr = 86217088
+dwPlayerResource = 52609312
+dwRadarBase = 86207060
+dwSensitivity = 14609320
+dwSensitivityPtr = 14609320
+dwSetClanTag = 580224
+dwViewMatrix = 81726916
+dwWeaponTable = 86369836
+dwWeaponTableIndex = 12908
+dwYawPtr = 14608696
+dwZoomSensitivityRatioPtr = 14631848
+dwbSendPackets = 905906
+dwppDirect3DDevice9 = 680640
+find_hud_element = 1488192208
+force_update_spectator_glow = 4036986
+interface_engine_cvar = 260764
+is_c4_owner = 4092320
+m_bDormant = 237
+m_bIsLocalPlayer = 13864
+m_flSpawnTime = 66496
+m_pStudioHdr = 10576
+m_pitchClassPtr = 86216872
+m_yawClassPtr = 14608696
+model_ambient_min = 5902740
+set_abs_angles = 1997328
+set_abs_origin = 1996880
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 #netvars
 
@@ -144,6 +199,10 @@ m_nFallbackPaintKit = 12760
 m_nFallbackSeed = 12764
 m_nFallbackStatTrak = 12772
 m_nForceBone = 9868
+<<<<<<< HEAD
+=======
+m_nModelIndex = 600
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 m_nTickBase = 13376
 m_nViewModelIndex = 10704
 m_rgflCoordinateFrame = 1092

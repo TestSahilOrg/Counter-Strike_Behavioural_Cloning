@@ -29,8 +29,13 @@ from config import *
 
 # save_dir = 'F:/02_saved_models_hdd'
 # save_dir = 'C:/Users/Tim Pearce/Google Drive/Google Drive all/05. misc geeky/03_csgo_bot/02_remotemodels' # load model from here
+<<<<<<< HEAD
 save_dir = 'G:/My Drive/Google Drive all/11. Sharing/csgo_models/' # load model from here
 save_dir_overflow = 'F:/2021/01_remotemodels_overflow' # save stateful model to here
+=======
+save_dir = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/' # load model from here
+save_dir_overflow = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/' # save stateful model to here
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 # list of model names to convert to stateful version
 model_names = ['ak47_sub_55k_drop_d4']

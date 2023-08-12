@@ -28,8 +28,13 @@ from config import *
 # (probably want to delete some due to the per file checks)
 
 
+<<<<<<< HEAD
 file_name_stub = 'dm_sample_' 
 folder_name = 'G:/2021/csgo_bot_train_july2021/'
+=======
+file_name_stub = 'dm_test_expert_' 
+folder_name = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/'
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 starting_value = 1
 highest_num = get_highest_num(file_name_stub, folder_name)
@@ -345,6 +350,7 @@ for file_num in range(starting_value,highest_num+1):
 
 summary_stats_np = np.array(summary_stats)
 
+<<<<<<< HEAD
 fig, ax = plt.subplots()
 ax.plot(summary_stats_np[:,0], summary_stats_np[:,1]/1000,label='dead_skipped')
 ax.plot(summary_stats_np[:,0], summary_stats_np[:,3]/1000,label='ram_gsi_disagree_ammo')
@@ -354,6 +360,20 @@ ax.plot(summary_stats_np[:,0], summary_stats_np[:,7]/1000,label='vel_static')
 ax.legend()
 ax.set_title('summary stats')
 fig.show()
+=======
+print("Shape of summary_stats_np:", summary_stats_np.shape)
+
+fig, ax = plt.subplots()
+ax.plot(summary_stats_np[:, 0], summary_stats_np[:, 1] / 1000, label='dead_skipped')
+ax.plot(summary_stats_np[:, 0], summary_stats_np[:, 3] / 1000, label='ram_gsi_disagree_ammo')
+ax.plot(summary_stats_np[:, 0], summary_stats_np[:, 5], label='obs_count')
+ax.plot(summary_stats_np[:, 0], summary_stats_np[:, 6] / 1000, label='mouse_static')
+ax.plot(summary_stats_np[:, 0], summary_stats_np[:, 7] / 1000, label='vel_static')
+ax.legend()
+ax.set_title('summary stats')
+plt.show()
+
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 
 
@@ -412,6 +432,7 @@ if False:
         if is_found:
             # rename this file to earlier one
             os.rename(file_name,file_name2)
+<<<<<<< HEAD
             print('\nrenaming', file_name, 'to', file_name2)
 
 
@@ -424,3 +445,6 @@ if False:
 
 
 
+=======
+            print('\nrenaming', file_name, 'to', file_name2)
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)

@@ -12,8 +12,13 @@ import numpy as np
 from config import *
 
 # this script takes a .npy file saved by dm_infer_actions.py
+<<<<<<< HEAD
 # 1) adds the onehot training targets needed for NN training, y_train
 # 2) creates and adds the aux input, x_aux (note this is not used in final agent)
+=======
+# 1) adds the onehot training targets needed for Neural Network training, y_train
+# 2) creates and adds the aux input, x_aux (note this is not used in final agent) ######
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 # 3) creates and adds a 'helper array', [kill_event, death_event], both binary variables
 # ends up with:
 # [img_small,curr_vars,infer_a,y_train,x_aux,helper_arr]
@@ -26,18 +31,29 @@ from config import *
 # one hdf5 file per .npy file
 # this effectively duplicates our datasize, so could delete the image in the .npy file 
 
+<<<<<<< HEAD
 
 file_name_stub = 'dm_mirage_expert_' 
 # folder_name = 'F:/2021/csgo_bot_train_july2021/'
 folder_name = 'G:/2021/csgo_bot_train_july2021/06_othermaps/'
 
 # folder_name = 'F:/01_training_data_hdd/04_march_2021_aim_clean/'
+=======
+#Files Loading - NPY Files
+file_name_stub = 'dm_test_expert_' 
+folder_name = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/'
+
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 starting_value = 1
 highest_num = get_highest_num(file_name_stub, folder_name)
 # highest_num = 2100
 
 
 # for each file of interest
+<<<<<<< HEAD
+=======
+# Timestamp in UNIX format
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 for file_num in range(starting_value,highest_num+1):
     print(datetime.datetime.now())
     file_name = folder_name+file_name_stub + str(file_num) + '.npy'
@@ -47,9 +63,15 @@ for file_num in range(starting_value,highest_num+1):
 
     # step through training data and create y_targets
     y_train_full=[]
+<<<<<<< HEAD
     y_mouses=[] # need this when input mouse aux as continuous value
     x_train_aux=[]
     helper_arr=[]
+=======
+    y_mouses=[] # need this when input mouse aux as continuous value # Mouse Co-ordinates
+    x_train_aux=[] # Mouse Co-ordinates
+    helper_arr=[] # Selection of Kills and Deaths of our agent 
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
     for i in range(0,len(training_data)):
         print(i,end='\r')
         infer_actions = training_data[i][2]
@@ -64,7 +86,11 @@ for file_num in range(starting_value,highest_num+1):
         y_train_full.append(np.concatenate([keys_pressed_onehot,Lclicks_onehot,Rclicks_onehot,mouse_x_onehot,mouse_y_onehot]))
         y_mouses.append([mouse_x/mouse_x_lim[1],mouse_y/mouse_y_lim[1]]) # normalised mouse
 
+<<<<<<< HEAD
         # create auxillary inputs
+=======
+        # create auxillary inputs by looking back once for every timestep i.e 'i' wrt ACTIONS_PREV
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
         x_aux_i = np.zeros(int(ACTIONS_PREV*(aux_input_length)))
         for j in range(0,ACTIONS_PREV):
             if j > i-1: break # if trying to look back too far, just ignore, assume did nothing
@@ -133,6 +159,7 @@ for file_num in range(starting_value,highest_num+1):
     print('SAVED', file_name)
     print('SAVED', h5file_name)
     print()
+<<<<<<< HEAD
     h5file.close()
 
 
@@ -181,3 +208,6 @@ if False:
         print('OVERWROTE without image', file_name)
 
 
+=======
+    h5file.close()
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)

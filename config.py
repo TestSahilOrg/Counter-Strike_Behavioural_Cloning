@@ -290,4 +290,8 @@ if os.name == 'nt': # if windows
             while time.time() < loop_start_time + 1/loop_fps:
                 time.sleep(0.001)
                 pass
+<<<<<<< HEAD
         return
+=======
+        return
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)

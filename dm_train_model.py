@@ -31,6 +31,7 @@ batch_size = 1 # this is total batchsize using all GPUs, so make divisible by nu
 l_rate = 0.0001
 
 # training data location
+<<<<<<< HEAD
 file_name_stub = 'dm_july2021_expert_' # dm_july2021_ aim_july2021_expert_ dm_july2021_expert_
 # file_name_stub = 'dm_6nov_aim_' 
 folder_name = '/mfs/TimPearce/01_csgo/01_trainingdata/' 
@@ -40,6 +41,17 @@ highest_num = 30 # highest file name to use in training 4000, 5500, 190, 45, 10
 # whether to save model if training and where
 model_name = 'ak47_m41a_55k_sub_drop_'
 save_dir = '/mfs/TimPearce/01_csgo/02_savedmodels'
+=======
+file_name_stub = 'dm_test_expert_' # dm_july2021_ aim_july2021_expert_ dm_july2021_expert_
+# file_name_stub = 'dm_6nov_aim_' 
+folder_name = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/' 
+starting_num = 1 # lowest file name to use in training
+highest_num = 2 # highest file name to use in training 4000, 5500, 190, 45, 10
+
+# whether to save model if training and where
+model_name = 'ak47_m41a_55k_sub_drop_'
+save_dir = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/'
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 SAVE_MODEL = True
 
 # whether to resume training from a previous model
@@ -47,17 +59,29 @@ IS_LOAD_WEIGHTS_AND_MODEL=False
 weights_name = 'test_model_1'
 
 # which subselection of dataset to train on
+<<<<<<< HEAD
 IS_SUBSELECT = False
+=======
+IS_SUBSELECT = True
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 SUB_PROB = 0.4
 SUB_TYPE = 'ak' # ak or akm4 or all
 OVERSAMPLE_LOWFREQ_REGION=False
 
 # where are the metadata .npy files? only needed if subselecting
+<<<<<<< HEAD
 curr_vars_folder = '/mfs/TimPearce/01_csgo/03_currvars/'
 if file_name_stub == 'dm_july2021_expert_':
     curr_vars_stub = 'currvarsv2_dm_july2021_expert_'
 else:
     curr_vars_stub = 'currvarsv2_dm_july2021_'
+=======
+curr_vars_folder = 'C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/WASD_NPY/'
+if file_name_stub == 'dm_test_expert_':
+    curr_vars_stub = 'currvarsv2_dm_test_expert_'
+else:
+    curr_vars_stub = 'currvarsv2_dm_test_'
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
 
 
 start_time=time.time()
@@ -317,6 +341,10 @@ class DataGenerator(keras.utils.Sequence):
 
             # quicker way reading from hdf5
             file_name = folder_name + 'hdf5_'+file_name_stub + str(file_num) + '.hdf5'
+<<<<<<< HEAD
+=======
+            
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
             h5file = h5py.File(file_name, 'r')
 
             for j in range(N_TIMESTEPS):
@@ -434,7 +462,11 @@ if IS_SUBSELECT:
     # and create a massive dict in memory with just key = 'filenum_frame'
     # and values helper_i, y_i
 
+<<<<<<< HEAD
     n_filer_per_chunk=100
+=======
+    n_filer_per_chunk=2
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
     info_array = []
     weap_arr=[]
     subselect_helper_dict={}
@@ -686,7 +718,11 @@ if False:
 
 
 # I used a different training routine for different datasets
+<<<<<<< HEAD
 if file_name_stub == 'dm_july2021_':
+=======
+if file_name_stub == 'dm_test_expert_':
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
     for iter_letter in ['a','b','c','d','e','f','g','h','i','j','k']:
         hist = model.fit(training_generator1,epochs=1,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20)
         tp_save_model(model, save_dir, model_name+iter_letter+'1')
@@ -697,6 +733,7 @@ if file_name_stub == 'dm_july2021_':
         hist = model.fit(training_generator4,epochs=1,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20)
         tp_save_model(model, save_dir, model_name+iter_letter+'4')
 
+<<<<<<< HEAD
 if file_name_stub == 'aim_july2021_expert_' and IS_LOAD_WEIGHTS_AND_MODEL:
     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
     # tp_save_model(model, save_dir, model_name+'4')
@@ -773,6 +810,84 @@ if file_name_stub == 'dm_july2021_expert_' and IS_LOAD_WEIGHTS_AND_MODEL:
         tp_save_model(model, save_dir, model_name+'60')
 
 if file_name_stub == 'dm_july2021_expert_' and not IS_LOAD_WEIGHTS_AND_MODEL:
+=======
+# if file_name_stub == 'aim_july2021_expert_' and IS_LOAD_WEIGHTS_AND_MODEL:
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     # tp_save_model(model, save_dir, model_name+'4')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     # tp_save_model(model, save_dir, model_name+'8')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     # tp_save_model(model, save_dir, model_name+'12')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'16')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=8,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'24')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=8,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'32')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=8,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'40')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'44')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'48')
+#     # K.set_value(model.optimizer.lr, l_rate/10)
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'52')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'56')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'60')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=12,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'72')
+#     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=12,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#     tp_save_model(model, save_dir, model_name+'84')
+
+
+# if file_name_stub == 'dm_july2021_expert_' and IS_LOAD_WEIGHTS_AND_MODEL:
+#     if False:
+#         for iter_letter in ['a','b','c','d','e','f','g','h','i','j','k']:
+#             hist = model.fit(training_generator1,epochs=1,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20)
+#             tp_save_model(model, save_dir, model_name+iter_letter+'1')
+#             hist = model.fit(training_generator2,epochs=1,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20)
+#             tp_save_model(model, save_dir, model_name+iter_letter+'2')
+#             hist = model.fit(training_generator3,epochs=1,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20)
+#             tp_save_model(model, save_dir, model_name+iter_letter+'3')
+#             hist = model.fit(training_generator4,epochs=1,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20)
+#             tp_save_model(model, save_dir, model_name+iter_letter+'4')
+#     else:
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         # tp_save_model(model, save_dir, model_name+'4')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'8')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'12')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'16')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'20')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'24')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'28')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'32')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'36')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'40')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'44')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'48')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'52')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'56')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+'60')
+
+if file_name_stub == 'dm_test_expert_' and not IS_LOAD_WEIGHTS_AND_MODEL:
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
     # training from scratch
     for iter_letter in ['a','b','c','d','e','f']:
         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
@@ -784,6 +899,7 @@ if file_name_stub == 'dm_july2021_expert_' and not IS_LOAD_WEIGHTS_AND_MODEL:
         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
         tp_save_model(model, save_dir, model_name+iter_letter+'16')
 
+<<<<<<< HEAD
 if file_name_stub == 'aim_july2021_expert_' and not IS_LOAD_WEIGHTS_AND_MODEL:
     # training from scratch
     for iter_letter in ['a','b','c','d','e','f']:
@@ -797,6 +913,21 @@ if file_name_stub == 'aim_july2021_expert_' and not IS_LOAD_WEIGHTS_AND_MODEL:
         tp_save_model(model, save_dir, model_name+iter_letter+'16')
 
 if file_name_stub == 'dm_inferno_expert_' or file_name_stub == 'dm_mirage_expert_' or file_name_stub == 'dm_nuke_expert_':
+=======
+# if file_name_stub == 'aim_test_expert_' and not IS_LOAD_WEIGHTS_AND_MODEL:
+#     # training from scratch
+#     for iter_letter in ['a','b','c','d','e','f']:
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+iter_letter+'4')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+iter_letter+'8')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+iter_letter+'12')
+#         hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
+#         tp_save_model(model, save_dir, model_name+iter_letter+'16')
+
+if file_name_stub == 'dm_test_expert_' or file_name_stub == 'dm_mirage_expert_' or file_name_stub == 'dm_nuke_expert_':
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
     K.set_value(model.optimizer.lr, 0.00001)
     hist = model.fit(training_generator_full,validation_data=validation_generator_full,epochs=4,workers=4,verbose=1,use_multiprocessing=True, max_queue_size=20) 
     tp_save_model(model, save_dir, model_name+'4')
@@ -814,4 +945,7 @@ if file_name_stub == 'dm_inferno_expert_' or file_name_stub == 'dm_mirage_expert
 
 print('took',np.round(time.time()-start_time,1),' secs\n')
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a33a68d (Made changes in folder paths, also changed the file names as per my convenience)
